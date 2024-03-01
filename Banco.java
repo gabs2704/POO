@@ -1,39 +1,39 @@
-import java.text.Format;
 import java.util.Scanner;
 
 public class Banco{
     public static void main(String args[]){
         Scanner entrada = new Scanner(System.in);
         float saldo=0, saque=0,deposito=0;
-        int op=0;
-        do{
+        String op;
+        do {
             System.out.println("MENU");
-            System.out.println("1)Consulta de saldo;");
-            System.out.println("2)Saque;");
-            System.out.println("3)Deposito;");
-            System.out.println("4)Sair;");
-            op=entrada.nextInt();
+            System.out.println("a) Consulta de saldo;");
+            System.out.println("b) Saque;");
+            System.out.println("c) Deposito;");
+            System.out.println("d) Sair;");
+            op=entrada.nextLine();
+            System.out.println("-------------------------");
             switch (op) {
-                case 1:
+                case "a":
                     System.out.println("Seu saldo é:R$" +saldo);
                     break;
-                case 2:
+                case "b":
                     System.out.println("Valor do saque:R$");
                     saque=entrada.nextFloat();
                     saldo=saldo-saque;
                     break;
-                case 3:
+                case "c":
                     System.out.println("Seu deposito é:R$");
                     deposito=entrada.nextFloat();
                     saldo=saldo+deposito;
                     break;
-                case 4:
+                case "d":
                     System.out.println("Voce saiu!");
                     break;
                 default:
                     break;
             } 
-        }while(op<4);
+        }while(op!="d");
         
     }
 }
